@@ -198,4 +198,12 @@ if (localStorage.getItem("coke")) {
   var ckCart = JSON.parse(cokeCart);
   listProduct.push(ckCart);
 }
-document.getElementById("showNumberCart").innerHTML = listProduct.length;
+var numberCart = 0;
+if(listProduct.length > 0){ 
+for (let i = 0; i < listProduct.length; i++) {
+  numberCart = numberCart + listProduct[i].number;
+  document.getElementById("showNumberCart").innerHTML = numberCart;
+}
+}if(listProduct.number > 99){
+  document.getElementById("showNumberCart").innerHTML = "m";
+}
