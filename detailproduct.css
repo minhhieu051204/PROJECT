@@ -207,19 +207,16 @@ span {
   color: black;
 }
 .cartNumber{
-  border: 2px solid red;
-  border-radius: 50%;
-  background-color: red;
-  padding: 0px 3px;
-  width: fit-content;
+  width: 30px;
   height: fit-content;
   position: absolute;
-  top: 25px;
-  right: 10px;
+  top: 41px;
+  right: 12px;
 }
 #showNumberCart{
-  font-size: 10px;
-  color: white;
+  text-align: center;
+  font-size: 12px;
+  color: red;
 }
 /* footer */
 .footer-container {
