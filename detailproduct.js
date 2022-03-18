@@ -16,6 +16,9 @@ function decrease() {
     document.getElementById("total").innerHTML = price + " VND";
   }
 }
+
+
+var listProduct = [];
 function addToCartFC() {
   alert("You added " + quantity + " Fried Chicken parts to cart");
   var friedChicken = {
@@ -24,6 +27,7 @@ function addToCartFC() {
     money: price,
   };
   localStorage.setItem("friedchicken", JSON.stringify(friedChicken));
+  location.reload();
 }
 function addToCartHB() {
   alert("You added " + quantity + " Hamburger parts to cart");
@@ -33,6 +37,7 @@ function addToCartHB() {
     money: price,
   };
   localStorage.setItem("hamburger", JSON.stringify(burger));
+  location.reload();
 }
 function addToCartCN() {
   alert("You added " + quantity + " Chicken Nuggets parts to cart");
@@ -42,6 +47,7 @@ function addToCartCN() {
     money: price,
   };
   localStorage.setItem("chickennugget", JSON.stringify(nuggets));
+  location.reload();
 }
 function addToCartCH() {
   alert("You added " + quantity + " Chips parts to cart");
@@ -51,6 +57,7 @@ function addToCartCH() {
     money: price,
   };
   localStorage.setItem("chips", JSON.stringify(chips));
+  location.reload();
 }
 function addToCartHD() {
   alert("You added " + quantity + " Hot Dog parts to cart");
@@ -60,6 +67,7 @@ function addToCartHD() {
     money: price,
   };
   localStorage.setItem("hotdog", JSON.stringify(hotdog));
+  location.reload();
 }
 function addToCartTC() {
   alert("You added " + quantity + " Taco parts to cart");
@@ -69,6 +77,7 @@ function addToCartTC() {
     money: price,
   };
   localStorage.setItem("taco", JSON.stringify(taco));
+  location.reload();
 }
 function addToCartBT() {
   alert("You added " + quantity + " Burrito parts to cart");
@@ -78,6 +87,7 @@ function addToCartBT() {
     money: price,
   };
   localStorage.setItem("burrito", JSON.stringify(burrito));
+  location.reload();
 }
 function addToCartSW() {
   alert("You added " + quantity + " Sandwich parts to cart");
@@ -87,6 +97,7 @@ function addToCartSW() {
     money: price,
   };
   localStorage.setItem("sandwich", JSON.stringify(sandwich));
+  location.reload();
 }
 function addToCartCD() {
   alert("You added " + quantity + " Corndog parts to cart");
@@ -96,6 +107,7 @@ function addToCartCD() {
     money: price,
   };
   localStorage.setItem("corndog", JSON.stringify(corndog));
+  location.reload();
 }
 function addToCartPP() {
   alert("You added " + quantity + " Pepperoni Pizza parts to cart");
@@ -105,6 +117,7 @@ function addToCartPP() {
     money: price,
   };
   localStorage.setItem("pizza", JSON.stringify(pizza));
+  location.reload();
 }
 function addToCartKB() {
   alert("You added " + quantity + " Kebab parts to cart");
@@ -114,6 +127,7 @@ function addToCartKB() {
     money: price,
   };
   localStorage.setItem("kebab", JSON.stringify(kebab));
+  location.reload();
 }
 function addToCartCK() {
   alert("You added " + quantity + " Coke parts to cart");
@@ -123,9 +137,8 @@ function addToCartCK() {
     money: price,
   };
   localStorage.setItem("coke", JSON.stringify(coke));
+  location.reload();
 }
-
-var listProduct = [];
 
 if (localStorage.getItem("friedchicken")) {
   var friedChickenCart = localStorage.getItem("friedchicken");
@@ -198,6 +211,9 @@ if (localStorage.getItem("coke")) {
   var ckCart = JSON.parse(cokeCart);
   listProduct.push(ckCart);
 }
+
+localStorage.setItem("OrderList", JSON.stringify(listProduct));
+
 var numberCart = 0;
 if(listProduct.length > 0){ 
 for (let i = 0; i < listProduct.length; i++) {
@@ -207,3 +223,5 @@ for (let i = 0; i < listProduct.length; i++) {
 }if(listProduct.number > 99){
   document.getElementById("showNumberCart").innerHTML = "m";
 }
+
+
