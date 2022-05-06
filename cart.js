@@ -6,7 +6,6 @@ let listProductRender = listProduct.map((user) => {
     <td id="order-name">${user.name}</td>
     <td>${user.number}</td>
     <td>${user.money} VND</td>
-    <td><button class="delete" onclick="remove()" value="${user.name}">Remove</button></td>
   </tr>`;
   })
   .join("\n");
@@ -19,15 +18,11 @@ table.innerHTML = `
     <th>Product</th>
     <th>Quantity</th>
     <th>Price</th>
-    <th></th>
   </tr>
   </thead>
   ${listProductRender}`;
 
-function remove() {
-  console.log(this);
-  window.check = this;
-}
+
 
 
 if (listProduct.length < 1) {
